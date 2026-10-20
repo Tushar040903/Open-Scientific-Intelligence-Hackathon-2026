@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+venv/
+env/
+.venv/
+
+# Scratch & extracted texts from hackathon prep
+*.txt
+*.json
+check_intro.py
+fetch_submissions.py
+get_awards.py
+inspect_winners.py
+parse_cv_and_papers.py
+search_papers.py
+
+# Marimo cache
+.marimo/
