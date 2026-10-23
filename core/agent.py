@@ -33,9 +33,16 @@ class SynthesisProtocol:
 
 
 class SynthesisAgent:
-    def __init__(self, gemini_api_key: Optional[str] = None):
+    def __init__(self, gemini_api_key: Optional[str] = None, adaption_api_key: Optional[str] = None):
         self.api_key = gemini_api_key or os.environ.get("GEMINI_API_KEY")
+        self.adaption_key = adaption_api_key or os.environ.get("ADAPTION_API_KEY")
         self._init_gemini_client()
+        self._init_adaption_client()
+
+    def _init_adaption_client(self):
+        """Initializes Adaption Labs AutoScientist adaptive model client."""
+        self.adaption_endpoint = "https://api.adaptionlabs.ai/v1/science/synthesize"
+        self.use_adaption = bool(self.adaption_key)
 
     def _init_gemini_client(self):
         """Initializes Gemini client if key is available."""
