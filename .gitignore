@@ -28,3 +28,8 @@ test_story.pdf
 
 # Marimo cache
 .marimo/
+
+# Internal strategy & rehearsal video script files
+HACKATHON_WINNING_BLUEPRINT.md
+SpectraBond_AI_Video_Demo_Script.pdf
+generate_script_pdf.py
