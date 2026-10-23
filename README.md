@@ -146,15 +146,18 @@ python test_pipeline.py
 
 ---
 
-## 🎥 4-Minute Submission Video Script Outline
+## 🎥 Video Demonstration & Walkthrough
 
-| Timestamp | Screen Display | Voiceover / Talking Points |
-| :--- | :--- | :--- |
-| **0:00 – 0:40** | Slide with Architecture & Problem | *"Hello judges! Experimental materials discovery suffers from a painful disconnect: after collecting a noisy XRD spectrum, researchers spend hours guessing phases, while LLMs hallucinate non-physical crystal symmetries. Here is SpectraBond-AI."* |
-| **0:40 – 1:30** | Marimo Studio UI | *"Built on the reactive Marimo platform, SpectraBond-AI combines signal deconvolution with two grounded pillars: physics-based Bragg simulation and Valency Bond MCP connecting to 44.5 million papers."* |
-| **1:30 – 2:30** | Live Demo: $\text{LiCoO}_2$ | Selects the $\text{LiCoO}_2$ preset. Shows instantaneous peak deconvolution, Scherrer crystallite sizing, and overlay of theoretical Bragg reflections. Demonstrates the calibrated confidence score ($C_{\text{compound}} = 84.8\%$) and Valency citations with real DOIs. |
-| **2:30 – 3:20** | Live Demo: $\text{BaTiO}_3$ Impurity | Switches to the $\text{BaTiO}_3$ with impurity preset. Points to the red vertical marker at $25.3^\circ$. *"Notice how our compound confidence calibrator detects this unreacted anatase $\text{TiO}_2$ impurity, dropping the confidence and advising the researcher to increase sintering temperature by +50°C!"* |
-| **3:20 – 4:00** | Synthesis Card & Conclusion | Shows the executable synthesis protocol card with precursor safety rules. Acknowledges MDRI, Valency, and Marimo. Closes with open-source link. |
+[![Watch the SpectraBond-AI Video Demo](https://raw.githubusercontent.com/Tushar040903/Open-Scientific-Intelligence-Hackathon-2026/main/assets/cover_image.png)](https://www.loom.com/share/c1895a5418994d77a9ceeff7419004b6)
+
+> ▶️ **Watch the Full Interactive Video Demo on Loom (3m 48s):**  
+> **[https://www.loom.com/share/c1895a5418994d77a9ceeff7419004b6](https://www.loom.com/share/c1895a5418994d77a9ceeff7419004b6)**
+
+The walkthrough demonstrates:
+1. **Automated Signal Deconvolution:** Rapid baseline subtraction and Pseudo-Voigt peak identification on experimental battery cathode scans.
+2. **Crystallographic Physics Verification:** 100% concordance with space group $R\bar{3}m$ theoretical Bragg reflections ($C_{\text{compound}} = 84.8\%$).
+3. **Trace Phase Impurity Isolation:** Detecting unreacted Anatase $\text{TiO}_2$ ($25.31^\circ$) in $\text{BaTiO}_3$ and auto-prescribing thermal sintering adjustments.
+4. **Valency MCP Literature Grounding:** Extracting empirical precursors, thermal plateaus, and verified DOIs across 44.5M papers.
 
 ---
 

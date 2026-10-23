@@ -10,6 +10,7 @@ env/
 
 # Scratch & extracted texts from hackathon prep
 *.txt
+!requirements.txt
 *.json
 check_intro.py
 fetch_submissions.py
@@ -17,6 +18,13 @@ get_awards.py
 inspect_winners.py
 parse_cv_and_papers.py
 search_papers.py
+
+# Temporary debugging & test artifacts
+debug_app.py
+inspect_app_cells.py
+test_htmlbox.pdf
+test_render.html
+test_story.pdf
 
 # Marimo cache
 .marimo/
