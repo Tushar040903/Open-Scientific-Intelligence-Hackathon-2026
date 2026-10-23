@@ -42,7 +42,7 @@ def __():
 
 @app.cell
 def __(mo):
-    mo.md(
+    return mo.md(
         """
         # 🔬 SpectraBond-AI
         ### *Autonomous Multimodal Characterization & Inverse Synthesis Intelligence*
@@ -53,18 +53,17 @@ def __(mo):
         `🏆 MDRI General Prize Candidate` | `⚡ Valency MCP Bond Grounded (44.5M Papers)` | `🚀 Marimo Reactive Studio` | `🧠 Gemini 2.5 Science Engine`
         """
     )
-    return
 
 
 @app.cell
 def __(mo):
     preset_selector = mo.ui.dropdown(
         options={
-            "data/sample_spectra/LiCoO2_cathode.csv": "🔋 LiCoO2 — High-Rate Battery Cathode (Clean Single-Phase R-3m)",
-            "data/sample_spectra/BaTiO3_with_impurity.csv": "⚡ BaTiO3 — Ferroelectric Perovskite (Contains TiO2 Unreacted Impurity)",
-            "data/sample_spectra/MAPbI3_perovskite.csv": "☀️ MAPbI3 — Solar Halide Perovskite (Tetragonal I4/mcm)",
+            "🔋 LiCoO2 — High-Rate Battery Cathode (Clean Single-Phase R-3m)": "data/sample_spectra/LiCoO2_cathode.csv",
+            "⚡ BaTiO3 — Ferroelectric Perovskite (Contains TiO2 Unreacted Impurity)": "data/sample_spectra/BaTiO3_with_impurity.csv",
+            "☀️ MAPbI3 — Solar Halide Perovskite (Tetragonal I4/mcm)": "data/sample_spectra/MAPbI3_perovskite.csv",
         },
-        value="data/sample_spectra/LiCoO2_cathode.csv",
+        value="🔋 LiCoO2 — High-Rate Battery Cathode (Clean Single-Phase R-3m)",
         label="Select Benchmark Spectrum Preset:",
     )
 
@@ -89,8 +88,16 @@ def __(mo):
         label="Or Upload Custom Experimental Spectrum (CSV):",
     )
 
-    mo.hstack([preset_selector, tolerance_slider, prominence_slider], justify="start", gap=2)
-    return file_uploader, preset_selector, prominence_slider, tolerance_slider
+    return (
+        file_uploader,
+        preset_selector,
+        prominence_slider,
+        tolerance_slider,
+        mo.vstack([
+            mo.hstack([preset_selector, tolerance_slider, prominence_slider], justify="start", gap=2),
+            file_uploader,
+        ])
+    )
 
 
 @app.cell
@@ -120,7 +127,7 @@ def __(
         source_name = file_uploader.value[0].name
     else:
         source = preset_selector.value
-        source_name = preset_selector.value.split("/")[-1]
+        source_name = str(preset_selector.value).split("/")[-1]
 
     # 1. Signal Deconvolution
     spec_result = signal_eng.deconvolve(source, prominence=prominence_slider.value)
@@ -183,7 +190,7 @@ def __(
 
 
 @app.cell
-def __(go, make_subplots, primary_phase, spec_result, verdict):
+def __(go, make_subplots, np, primary_phase, spec_result, verdict):
     # Plotly Reactive Scientific Visualizer
     fig = make_subplots(
         rows=2,
@@ -310,12 +317,11 @@ def __(fig, mo, peaks_df, verdict):
     else:
         status_markdown += f"\n> ✅ **PHASE PURITY VERIFIED:** Single-phase crystal structure confirmed with high fidelity.\n"
 
-    mo.vstack([
+    return mo.vstack([
         mo.md(status_markdown),
         mo.ui.plotly(fig),
         mo.accordion({"📊 Deconvolved Peak Parameter Table (d-spacing & Scherrer Size)": mo.ui.table(peaks_df)}),
     ])
-    return (status_markdown,)
 
 
 @app.cell
@@ -351,12 +357,11 @@ def __(literature_papers, mo, protocol):
     > 🛡️ {protocol.safety_notes}
     """
 
-    mo.tabs({
+    return mo.tabs({
         "⚗️ Executable Synthesis Card": mo.md(synth_card),
         "📚 Valency Literature Citations": mo.md(lit_md),
         "📄 Full Markdown Report": mo.md(f"```markdown\n{protocol.markdown_report}\n```"),
     })
-    return lit_md, synth_card
 
 
 if __name__ == "__main__":
