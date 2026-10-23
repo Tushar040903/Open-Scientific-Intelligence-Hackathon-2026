@@ -42,7 +42,7 @@ def __():
 
 @app.cell
 def __(mo):
-    return mo.md(
+    mo.md(
         """
         # 🔬 SpectraBond-AI
         ### *Autonomous Multimodal Characterization & Inverse Synthesis Intelligence*
@@ -53,6 +53,7 @@ def __(mo):
         `🏆 MDRI General Prize Candidate` | `⚡ Valency MCP Bond Grounded (44.5M Papers)` | `🚀 Marimo Reactive Studio` | `🧠 Gemini 2.5 Science Engine`
         """
     )
+    return
 
 
 @app.cell
@@ -88,16 +89,12 @@ def __(mo):
         label="Or Upload Custom Experimental Spectrum (CSV):",
     )
 
-    return (
+    controls = mo.vstack([
+        mo.hstack([preset_selector, tolerance_slider, prominence_slider], justify="start", gap=2),
         file_uploader,
-        preset_selector,
-        prominence_slider,
-        tolerance_slider,
-        mo.vstack([
-            mo.hstack([preset_selector, tolerance_slider, prominence_slider], justify="start", gap=2),
-            file_uploader,
-        ])
-    )
+    ])
+    controls
+    return controls, file_uploader, preset_selector, prominence_slider, tolerance_slider
 
 
 @app.cell
@@ -139,7 +136,7 @@ def __(
     primary_phase = matched_phases[0] if matched_phases else None
     secondary_phase = matched_phases[1] if len(matched_phases) > 1 else None
 
-    # Check if primary phase candidate name is identified
+    # Target key
     target_key = "LiCoO2"
     if primary_phase:
         if "LiCoO2" in primary_phase.phase.formula:
@@ -149,7 +146,7 @@ def __(
         elif "Pb" in primary_phase.phase.formula or "MA" in primary_phase.phase.formula:
             target_key = "MAPbI3"
 
-    # 3. Valency Bond MCP Literature Retrieval (44.5M Papers)
+    # 3. Valency Bond MCP Literature Retrieval
     literature_papers = valency_cli.query_synthesis_literature(target_key)
 
     # 4. Compound Confidence Calibration
@@ -286,7 +283,7 @@ def __(go, make_subplots, np, primary_phase, spec_result, verdict):
             )
 
     fig.update_layout(
-        height=580,
+        height=520,
         margin=dict(l=40, r=40, t=50, b=40),
         legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
         template="plotly_white",
@@ -317,11 +314,13 @@ def __(fig, mo, peaks_df, verdict):
     else:
         status_markdown += f"\n> ✅ **PHASE PURITY VERIFIED:** Single-phase crystal structure confirmed with high fidelity.\n"
 
-    return mo.vstack([
+    dashboard = mo.vstack([
         mo.md(status_markdown),
         mo.ui.plotly(fig),
         mo.accordion({"📊 Deconvolved Peak Parameter Table (d-spacing & Scherrer Size)": mo.ui.table(peaks_df)}),
     ])
+    dashboard
+    return dashboard, status_markdown
 
 
 @app.cell
@@ -357,11 +356,13 @@ def __(literature_papers, mo, protocol):
     > 🛡️ {protocol.safety_notes}
     """
 
-    return mo.tabs({
+    tabs_view = mo.ui.tabs({
         "⚗️ Executable Synthesis Card": mo.md(synth_card),
         "📚 Valency Literature Citations": mo.md(lit_md),
         "📄 Full Markdown Report": mo.md(f"```markdown\n{protocol.markdown_report}\n```"),
     })
+    tabs_view
+    return lit_md, synth_card, tabs_view
 
 
 if __name__ == "__main__":
