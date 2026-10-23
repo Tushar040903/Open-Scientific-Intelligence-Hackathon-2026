@@ -2,7 +2,8 @@
 **Participant:** Tushar Bhardwaj (Solo Competitor) | **Affiliation:** National Institute of Technology Kurukshetra  
 **Event:** 4th Annual Open Scientific Intelligence (OSI) Hackathon (Oct 21–22, 2026)  
 **Presented by:** Materials Discovery Research Institute (MDRI / UL Research Institutes)  
-**GitHub Repository:** [https://github.com/Tushar040903/Open-Scientific-Intelligence-Hackathon-2026](https://github.com/Tushar040903/Open-Scientific-Intelligence-Hackathon-2026)
+**GitHub Repository:** [https://github.com/Tushar040903/Open-Scientific-Intelligence-Hackathon-2026](https://github.com/Tushar040903/Open-Scientific-Intelligence-Hackathon-2026)  
+**Video Demo (Loom):** [https://www.loom.com/share/c1895a5418994d77a9ceeff7419004b6](https://www.loom.com/share/c1895a5418994d77a9ceeff7419004b6)
 
 ---
 

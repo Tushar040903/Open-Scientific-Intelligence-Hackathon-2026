@@ -7,6 +7,12 @@
 [![Gemini 2.5](https://img.shields.io/badge/AI_Engine-Google_Gemini_2.5-EA4335.svg)](https://deepmind.google/technologies/gemini/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+![SpectraBond-AI Cover](https://raw.githubusercontent.com/Tushar040903/Open-Scientific-Intelligence-Hackathon-2026/main/assets/cover_image.png)
+
+> 🎥 **Video Demo (Loom):** [https://www.loom.com/share/c1895a5418994d77a9ceeff7419004b6](https://www.loom.com/share/c1895a5418994d77a9ceeff7419004b6)  
+> 💻 **GitHub Repository:** [https://github.com/Tushar040903/Open-Scientific-Intelligence-Hackathon-2026](https://github.com/Tushar040903/Open-Scientific-Intelligence-Hackathon-2026)  
+> 👨‍💻 **Author:** Tushar Bhardwaj (Solo Competitor, National Institute of Technology Kurukshetra)
+
 ---
 
 ## 🌟 Executive Summary

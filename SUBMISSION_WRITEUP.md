@@ -5,6 +5,12 @@
 [![Marimo App](https://img.shields.io/badge/Built_with-Marimo_Reactive_Studio-10B981.svg?style=for-the-badge)](https://marimo.io)
 [![Physics Calibrated](https://img.shields.io/badge/Verification-Physics_&_Bragg_Extinction-F59E0B.svg?style=for-the-badge)](https://github.com/Tushar040903/Open-Scientific-Intelligence-Hackathon-2026)
 
+![SpectraBond-AI Cover Image](https://raw.githubusercontent.com/Tushar040903/Open-Scientific-Intelligence-Hackathon-2026/main/assets/cover_image.png)
+
+> 🎥 **Video Demo (Loom):** [https://www.loom.com/share/c1895a5418994d77a9ceeff7419004b6](https://www.loom.com/share/c1895a5418994d77a9ceeff7419004b6)  
+> 💻 **Open-Source Code:** [https://github.com/Tushar040903/Open-Scientific-Intelligence-Hackathon-2026](https://github.com/Tushar040903/Open-Scientific-Intelligence-Hackathon-2026)  
+> 👨‍💻 **Developer:** Tushar Bhardwaj (Solo Competitor, NIT Kurukshetra)
+
 > **Lead Summary:**  
 > **SpectraBond-AI** is an autonomous closed-loop intelligence system built on the reactive [Marimo](https://marimo.io) platform that bridges raw experimental materials characterization with actionable laboratory synthesis. By unifying mathematical signal deconvolution, crystallographic space-group physics, and real-time literature grounding across 44.5 million research papers via [Valency MCP Bond](https://valency.io), the system eliminates LLM hallucinations and autonomously isolates parasitic trace phase impurities before expensive experimental runs are conducted.
 
